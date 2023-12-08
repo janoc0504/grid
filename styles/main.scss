@@ -1,10 +1,9 @@
 .wrap {
   display: grid;
   grid-template-areas:
-    "block1" "block2" "block3"
-  ;
+    "block1" "block2" "block3";
 
-  @media screen and (min-width: 357px) {
+  @media screen and (min-width: 576px) {
     grid-template-areas:
       "block1 block2"
       "block3 block3";
@@ -15,8 +14,6 @@
     grid-template-areas: "block1 block2 block3";
     gap: 30px;
   }
-
-
 
   &__block1,
   &__block2,
@@ -47,6 +44,26 @@
       margin: 30px;
       height: auto;
     }
+
+    h4 {
+      color: var(--active-regular, #24A3FF);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    h5 {
+      color: var(--grey-text, #B3B3BA);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
   }
 
   &__block2 {
@@ -60,12 +77,91 @@
 
 .section-footer {
   background: var(--grey-bg, #F5F5FA);
+
+  a {
+    color: var(--active-regular, #24A3FF);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 38px;
+    font-weight: 700;
+  }
 }
 
 .align-center {
   align-items: center;
 }
 
-footer p {
-  margin: 0;
+// .footer {
+//   &__p {
+//     margin: 0;
+//   }
+
+//   // &__autor {
+//   //   display: none;
+//   // }
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 30px;
+//   align-self: stretch;
+
+//   @media screen and (min-width: 768px) {
+//     &__autor {
+//       display: contents;
+//     }
+//   }
+// }
+
+.footer {
+  display: grid;
+  grid-template-areas: "block11" "block13" "block12";
+  text-align: center;
+
+  .d-flex {
+    display: inline;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-areas: "block11 block12" "block13 block12";
+  }
+
+  &_block11 {
+    grid-area: block11;
+  }
+
+  &_block12 {
+    grid-area: block12;
+    text-align: end;
+  }
+
+  &_block13 {
+    grid-area: block13;
+  }
+}
+
+
+.footer {
+  display: grid;
+  gap: 10px;
+
+  &__img {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__img {
+      display: inline;
+    }
+    &__autor {
+      display: flex;
+      justify-content: end;
+    }
+  }
+
 }
